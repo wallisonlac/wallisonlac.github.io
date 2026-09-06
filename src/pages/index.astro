@@ -24,84 +24,62 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
     }
-    .container { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
-    .eyebrow {
-      color: var(--accent);
-      font-weight: 600;
-      font-size: 0.95rem;
-      letter-spacing: 0.02em;
-    }
+    .container { max-width: 920px; margin: 0 auto; padding: 64px 24px 96px; }
+    .eyebrow { color: var(--accent); font-weight: 600; font-size: 0.95rem; letter-spacing: 0.02em; }
     h1 { font-size: 2.6rem; margin: 8px 0 4px; font-weight: 800; }
     .subtitle { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 24px; }
     .links { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
     .links a {
-      color: var(--text);
-      text-decoration: none;
-      border: 1px solid var(--border);
-      padding: 8px 18px;
-      border-radius: 8px;
-      font-size: 0.92rem;
-      transition: border-color 0.15s;
+      color: var(--text); text-decoration: none; border: 1px solid var(--border);
+      padding: 8px 18px; border-radius: 8px; font-size: 0.92rem; transition: border-color 0.15s;
     }
     .links a:hover { border-color: var(--accent); color: var(--accent); }
     hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
     h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 18px; }
+    h3.sub { font-size: 1.02rem; font-weight: 700; margin: 22px 0 8px; color: var(--text); }
     p { color: var(--text-dim); }
-    .lead { color: var(--text-dim); font-size: 1.02rem; max-width: 700px; }
+    .lead { color: var(--text-dim); font-size: 1.02rem; max-width: 760px; }
+    ul.clean { margin: 0; padding-left: 20px; }
+    ul.clean li { color: var(--text-dim); font-size: 0.93rem; margin-bottom: 6px; }
 
     .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
     @media (max-width: 700px) { .tracks { grid-template-columns: 1fr; } }
-    .track {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px 22px;
-    }
+    .track { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; }
     .track .tag {
-      display: inline-block;
-      color: var(--accent);
-      background: var(--accent-dim);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      padding: 3px 9px;
-      border-radius: 5px;
-      margin-bottom: 10px;
+      display: inline-block; color: var(--accent); background: var(--accent-dim);
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+      padding: 3px 9px; border-radius: 5px; margin-bottom: 10px;
     }
     .track h3 { font-size: 1.12rem; margin: 0 0 8px; font-weight: 700; }
     .track p { font-size: 0.92rem; margin: 0 0 10px; color: var(--text-dim); }
     .track .stack {
-      font-size: 0.82rem;
-      color: var(--text-dim);
-      border-top: 1px solid var(--border);
-      padding-top: 10px;
-      margin-top: 10px;
+      font-size: 0.82rem; color: var(--text-dim); border-top: 1px solid var(--border);
+      padding-top: 10px; margin-top: 10px;
     }
     .track .stack b { color: var(--text); font-weight: 600; }
 
-    .exp-item { margin-bottom: 22px; }
-    .exp-item .role { font-weight: 700; font-size: 1.02rem; }
-    .exp-item .meta { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 6px; }
-    .exp-item p { font-size: 0.94rem; margin: 0; }
+    .exp-item { margin-bottom: 26px; }
+    .exp-item .role { font-weight: 700; font-size: 1.05rem; color: var(--text); }
+    .exp-item .meta { color: var(--accent); font-size: 0.85rem; margin-bottom: 8px; }
+    .exp-item ul.clean li { font-size: 0.92rem; }
+
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 24px; margin-top: 4px; }
+    @media (max-width: 700px) { .skills-grid { grid-template-columns: 1fr; } }
+    .skill-row { font-size: 0.9rem; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .skill-row b { color: var(--text); font-weight: 600; margin-right: 6px; }
+    .skill-row span { color: var(--text-dim); }
+
+    .avail-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 22px 26px; }
+    .avail-box ul.clean li { font-size: 0.93rem; }
 
     .contact-box {
-      background: var(--bg-card);
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 28px;
-      text-align: center;
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+      padding: 28px; text-align: center;
     }
     .contact-box p { margin-bottom: 18px; }
     .cta {
-      display: inline-block;
-      background: var(--accent);
-      color: #06201c;
-      font-weight: 700;
-      padding: 10px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.95rem;
+      display: inline-block; background: var(--accent); color: #06201c; font-weight: 700;
+      padding: 10px 24px; border-radius: 8px; text-decoration: none; font-size: 0.95rem;
     }
     footer { text-align: center; color: var(--text-dim); font-size: 0.82rem; margin-top: 56px; }
   </style>
@@ -123,11 +101,14 @@
 
     <h2>About</h2>
     <p class="lead">
-      Senior Data Engineer with 8+ years of combined experience building production data pipelines,
-      cloud data platforms and ML-enabled systems for energy, oil &amp; gas, public-sector and industrial clients.
-      PhD candidate in Physics (University of Lisbon / LIP, in collaboration with CERN), applying
-      statistical modelling and neural networks to high-volume detector and sensor data since 2018.
-      Comfortable owning a project end-to-end — from raw data to a model or dashboard a stakeholder actually uses.
+      Senior Data Engineer with a consistent track record of turning multi-week manual processes into fully
+      automated, zero-touch pipelines across oil &amp; gas, energy, industrial and consumer-goods clients. Deep
+      hands-on experience with Python, SQL, PySpark, Databricks, Snowflake, Azure Data Factory, Azure Functions,
+      Apache Kafka, Apache Airflow, Cosmos DB (NoSQL), Power Apps, Power Automate and Power BI. Comfortable owning
+      a project end-to-end: database/schema conversion, dimensional modelling, streaming and orchestration, cloud
+      data-warehouse integration and stakeholder-facing dashboards. 8+ years of combined data engineering and
+      statistical-modelling experience, including large-scale scientific data processing during a PhD in Physics
+      at CERN/LIP. Experienced working in Agile/Scrum teams across every role.
     </p>
 
     <hr />
@@ -142,8 +123,8 @@
       <div class="track">
         <span class="tag">Core</span>
         <h3>Data Engineering &amp; Cloud Platforms</h3>
-        <p>Production ETL/ELT pipelines, dimensional modelling, streaming and orchestration across enterprise cloud stacks, with pipeline configs as code.</p>
-        <div class="stack"><b>Stack:</b> Azure Data Factory, Databricks (Unity Catalog), Synapse Analytics, Microsoft Fabric, Snowflake, PySpark, Kafka, Airflow, Cosmos DB, YAML-based pipeline/CI-CD configs</div>
+        <p>Production ETL/ELT pipelines, dimensional modelling (star &amp; snowflake schemas), streaming and orchestration, with pipeline configs as code.</p>
+        <div class="stack"><b>Stack:</b> Azure Data Factory, Databricks (Unity Catalog), Synapse Analytics, Microsoft Fabric, Snowflake, PySpark, Apache Kafka, Apache Airflow, Cosmos DB, SQL Server, Oracle, MySQL, PostgreSQL, YAML-based pipeline/CI-CD configs</div>
       </div>
 
       <div class="track">
@@ -156,15 +137,15 @@
       <div class="track">
         <span class="tag">Core</span>
         <h3>BI &amp; Business Automation</h3>
-        <p>Executive-facing dashboards and semantic models, plus low-code automation that connects directly into the data layer.</p>
-        <div class="stack"><b>Stack:</b> Power BI, DAX, Power Query (M language), Power Apps, Power Automate, Azure Functions (event-driven automation wired into Power Automate)</div>
+        <p>Executive-facing dashboards and semantic models, plus low-code automation wired directly into the data layer.</p>
+        <div class="stack"><b>Stack:</b> Power BI, DAX, Power Query (M language), Power Apps, Power Automate, Azure Functions (event-driven automation)</div>
       </div>
 
       <div class="track">
         <span class="tag">Depth</span>
         <h3>Scientific Computing &amp; Research</h3>
         <p>Statistical modelling and neural networks on high-frequency detector/sensor data for particle-physics experiments (DUNE, SBND, ProtoDUNE 2).</p>
-        <div class="stack"><b>Stack:</b> Python, C++, GEANT4, ROOT, neural networks since 2018</div>
+        <div class="stack"><b>Stack:</b> Python, C++, R, GEANT4, ROOT, neural networks since 2018</div>
       </div>
 
       <div class="track">
@@ -185,30 +166,100 @@
 
     <hr />
 
-    <h2>Recent Experience</h2>
+    <h2>Professional Experience</h2>
 
     <div class="exp-item">
-      <div class="role">Senior Data Engineer — CGI, Lisbon</div>
-      <div class="meta">2025 — Present</div>
-      <p>EDP (electric utility), SBM &amp; Oryx (oil &amp; gas), Castle Waters. Automated a 2-week manual BI process into an end-to-end pipeline; converted legacy SQL databases into PySpark pipelines; built executive dashboards.</p>
+      <div class="role">Senior Data Engineer — CGI, Lisbon, Portugal</div>
+      <div class="meta">Jan 2025 — Present</div>
+      <ul class="clean">
+        <li><b>EDP:</b> automated a manual BI process that previously took two weeks, rebuilding it end-to-end with Python, Power Apps, Azure Functions, Databricks and Azure — cutting turnaround down to hours.</li>
+        <li><b>Castle Waters:</b> built pipelines to ingest, clean and structure large volumes of financial transaction data for downstream reporting.</li>
+        <li><b>SBM &amp; Oryx (oil &amp; gas):</b> converted legacy SQL databases into Python/PySpark pipelines, redesigned the data model, and built business-facing dashboards for operational and executive reporting.</li>
+        <li>Used Apache Kafka for real-time streaming and Apache Airflow to orchestrate ETL/ELT across multiple client environments.</li>
+        <li>Worked with Cosmos DB (NoSQL) for semi-structured data feeding analytics pipelines.</li>
+        <li>Designed dimensional models (star &amp; snowflake schemas) across all client engagements.</li>
+        <li>Built and optimised Power BI dashboards and semantic models with advanced DAX and performance tuning.</li>
+        <li>Delivered all projects in Agile/Scrum teams, with automated data-quality checks and monitoring.</li>
+      </ul>
     </div>
 
     <div class="exp-item">
-      <div class="role">Data Engineer &amp; Instrumentation Specialist — CERN, Geneva</div>
+      <div class="role">Data Engineer &amp; Instrumentation Specialist — CERN, Geneva, Switzerland</div>
       <div class="meta">Jan 2024 — Dec 2024</div>
-      <p>Automated processing workflows for scientific instrumentation data; reduced calibration downtime through anomaly-detection and process automation.</p>
+      <ul class="clean">
+        <li>Developed data pipelines and automated processing workflows for scientific instrumentation data.</li>
+        <li>Improved operational efficiency and reduced calibration downtime through process automation.</li>
+      </ul>
     </div>
 
     <div class="exp-item">
-      <div class="role">PhD Candidate — LIP / University of Lisbon &amp; CERN</div>
-      <div class="meta">2022 — Present</div>
-      <p>ML and statistical modelling on high-volume detector/laser-sensor time-series for neutrino experiments (DUNE, SBND, ProtoDUNE 2).</p>
+      <div class="role">Quantitative Software Developer — SVRI (Microchip Technology Company)</div>
+      <div class="meta">Jan 2023 — Dec 2023</div>
+      <ul class="clean">
+        <li>Developed Python and VBA solutions to automate operational data-processing workflows.</li>
+        <li>Integrated SAP data into reporting and data-processing pipelines.</li>
+        <li>Applied systematic performance optimisation and automation practices in industrial data environments.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="role">PhD Candidate — PT-CERN Fellowship, LIP / University of Lisbon &amp; CERN</div>
+      <div class="meta">Sept 2022 — Present</div>
+      <ul class="clean">
+        <li>Built and maintained Python pipelines to ingest, convert and process thousands of high-volume data points from laser and particle-detector instrumentation (DUNE, SBND, ProtoDUNE 2).</li>
+        <li>Handled large-scale scientific data processing, applying cleaning, transformation and statistical-validation routines.</li>
+        <li>Developed automated processing routines that reduced manual work and improved reproducibility of calibration workflows.</li>
+      </ul>
     </div>
 
     <div class="exp-item">
       <div class="role">Data Analyst / BI Developer — 3M Brasil (Remote)</div>
-      <div class="meta">2021 — 2022</div>
-      <p>Integrated Snowflake with Azure; built global production &amp; demand-planning dashboards; automated week-long reporting down to minutes.</p>
+      <div class="meta">Jan 2021 — Dec 2022</div>
+      <ul class="clean">
+        <li>Integrated the Snowflake data warehouse with Azure, building automated pipelines to keep both platforms synchronised for enterprise-wide reporting.</li>
+        <li>Designed production, supply-chain and demand-planning dashboards in Power BI, used across the global operations team.</li>
+        <li>Developed internal applications for the global team of production planners to streamline workflows.</li>
+        <li>Automated multiple week-long tasks into fully automated processes requiring no manual intervention.</li>
+        <li>Used VBA and Python to automate legacy reporting, cutting manual reporting time from one week to about five minutes.</li>
+        <li>Worked in Agile teams with business stakeholders to define reporting requirements and ensure analytical consistency.</li>
+      </ul>
+    </div>
+
+    <hr />
+
+    <h2>Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-row"><b>Programming:</b> <span>Python, SQL, C++, R, VBA</span></div>
+      <div class="skill-row"><b>Cloud / Data Platforms:</b> <span>Azure Data Factory, Databricks, Synapse, Fabric, Azure Functions, Snowflake</span></div>
+      <div class="skill-row"><b>Streaming &amp; Orchestration:</b> <span>Apache Kafka, Apache Airflow</span></div>
+      <div class="skill-row"><b>NoSQL / Databases:</b> <span>Cosmos DB, SQL Server, Oracle, MySQL, PostgreSQL</span></div>
+      <div class="skill-row"><b>Automation:</b> <span>Power Automate, Power Apps</span></div>
+      <div class="skill-row"><b>Data Engineering:</b> <span>PySpark, ETL/ELT, Dimensional Modelling, Data Warehousing, Data Lake</span></div>
+      <div class="skill-row"><b>BI:</b> <span>Power BI, DAX, Power Query (M)</span></div>
+      <div class="skill-row"><b>ML/MLOps:</b> <span>scikit-learn, PyTorch, TensorFlow, MLflow, Azure ML</span></div>
+      <div class="skill-row"><b>Methodology:</b> <span>Agile / Scrum</span></div>
+      <div class="skill-row"><b>Tools:</b> <span>Git, Linux, DBeaver, Excel</span></div>
+    </div>
+
+    <hr />
+
+    <h2>Education</h2>
+    <ul class="clean">
+      <li><b style="color:var(--text)">PhD in Physics (Candidate)</b> — University of Lisbon, Portugal, 2022 – Present</li>
+      <li><b style="color:var(--text)">MSc in Physics</b> — UNIFAL, Brazil, 2018 – 2021</li>
+      <li><b style="color:var(--text)">Bachelor in Mining Engineering</b> — UNIFAL, Brazil, 2015 – 2022</li>
+    </ul>
+
+    <hr />
+
+    <h2>Availability &amp; Contract Terms</h2>
+    <div class="avail-box">
+      <ul class="clean">
+        <li>Based in Lisbon, Portugal (CET/WEST) — available for remote work across EU and Latin America time zones.</li>
+        <li>Legal resident in Portugal; available for B2B / freelance contracts with clear scope, rate and duration.</li>
+        <li>Open to short and long-term contracts, part-time or full-time engagement.</li>
+        <li>Languages: Portuguese (native), English (advanced), Spanish (intermediate).</li>
+      </ul>
     </div>
 
     <hr />
