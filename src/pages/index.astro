@@ -1,46 +1,20 @@
 ---
-const projects = [
-  {
-    name: "Kafka + PySpark + Airflow Pipeline",
-    description: "Real-time IoT sensor pipeline: Kafka streaming, PySpark medallion architecture (bronze/silver/gold), star-schema modelling, orchestrated with Airflow.",
-    url: "https://github.com/wallisonlac/kafka-pyspark-airflow-pipeline",
-    tags: ["Kafka", "PySpark", "Airflow", "Star Schema"]
-  },
-  {
-    name: "Detector Calibration Pipeline",
-    description: "Synthetic particle-detector waveform simulation, feature extraction and automated calibration QA reporting, mirroring PhD/CERN detector-calibration work.",
-    url: "https://github.com/wallisonlac/detector-calibration-pipeline",
-    tags: ["Python", "NumPy", "Scientific Computing", "Data Validation"]
-  }
-];
-
-const experience = [
-  { company: "CGI", role: "Senior Data Engineer", period: "2025 – Present", desc: "Delivering data platforms for EDP, SBM, Oryx and Castle Waters: legacy SQL-to-PySpark migrations, Kafka streaming, Airflow orchestration, Cosmos DB, dimensional modelling and Power BI reporting." },
-  { company: "CERN", role: "Data Engineer & Instrumentation Specialist", period: "2024", desc: "Automated scientific instrumentation pipelines, reducing calibration downtime." },
-  { company: "LIP / University of Lisbon", role: "PhD Candidate — PT-CERN Fellowship", period: "2022 – Present", desc: "Building Python pipelines to process thousands of high-volume data points from detector/laser instrumentation for international neutrino experiments (DUNE, SBND, ProtoDUNE)." },
-  { company: "3M Brazil", role: "Data Analyst / BI Developer", period: "2021 – 2022", desc: "Integrated Snowflake with Azure; cut manual reporting from one week to ~5 minutes using Python/VBA automation." }
-];
 ---
-
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Wallison Campanelli — Senior Data Engineer</title>
-  <meta name="description" content="Senior Data Engineer based in Lisbon, Portugal. ETL/ELT, Azure, Databricks, PySpark, Power BI. PhD candidate in Physics (CERN/LIP). Open to EU remote/hybrid B2B contracts." />
-  <meta property="og:title" content="Wallison Campanelli — Senior Data Engineer" />
-  <meta property="og:description" content="Senior Data Engineer | ETL/ELT & Cloud Data Platforms | PhD Candidate in Physics (CERN/LIP)" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://wallisonlac.github.io" />
-  <link rel="icon" href="data:," />
+  <title>Wallison Campanelli — Senior Data Engineer & ML Engineer</title>
+  <meta name="description" content="Senior Data Engineer & ML Engineer. Azure, Databricks, Snowflake, PySpark, MLOps, Power BI. PhD in Physics (CERN/LIP). Open to remote B2B contracts." />
   <style>
     :root {
-      --bg: #0b0d12;
-      --card: #12151c;
-      --text: #e8eaed;
-      --muted: #9aa3b2;
-      --accent: #5eead4;
-      --border: #232733;
+      --bg: #0b0e11;
+      --bg-card: #12161b;
+      --border: #22282f;
+      --text: #e7e9ea;
+      --text-dim: #9aa4ad;
+      --accent: #2dd4bf;
+      --accent-dim: #1a4a44;
     }
     * { box-sizing: border-box; }
     body {
@@ -50,135 +24,203 @@ const experience = [
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       line-height: 1.6;
     }
-    .container { max-width: 860px; margin: 0 auto; padding: 0 24px; }
-    header { padding: 80px 0 40px; }
-    h1 { font-size: 2.2rem; margin: 0 0 8px; }
-    .tagline { color: var(--accent); font-size: 1.1rem; font-weight: 600; margin-bottom: 4px; }
-    .location { color: var(--muted); margin-bottom: 24px; }
+    .container { max-width: 880px; margin: 0 auto; padding: 64px 24px 96px; }
+    .eyebrow {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.02em;
+    }
+    h1 { font-size: 2.6rem; margin: 8px 0 4px; font-weight: 800; }
+    .subtitle { color: var(--text-dim); font-size: 1.05rem; margin-bottom: 24px; }
+    .links { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
     .links a {
       color: var(--text);
       text-decoration: none;
       border: 1px solid var(--border);
-      padding: 8px 16px;
+      padding: 8px 18px;
       border-radius: 8px;
-      margin-right: 10px;
-      display: inline-block;
-      margin-bottom: 8px;
-      font-size: 0.9rem;
+      font-size: 0.92rem;
+      transition: border-color 0.15s;
     }
     .links a:hover { border-color: var(--accent); color: var(--accent); }
-    section { padding: 40px 0; border-top: 1px solid var(--border); }
-    h2 { font-size: 1.4rem; margin-bottom: 20px; }
-    p.lead { color: var(--muted); font-size: 1.05rem; }
-    .grid { display: grid; gap: 16px; }
-    .card {
-      background: var(--card);
+    hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+    h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 18px; }
+    p { color: var(--text-dim); }
+    .lead { color: var(--text-dim); font-size: 1.02rem; max-width: 700px; }
+
+    .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
+    @media (max-width: 700px) { .tracks { grid-template-columns: 1fr; } }
+    .track {
+      background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px;
+      padding: 20px 22px;
     }
-    .card h3 { margin: 0 0 8px; font-size: 1.1rem; }
-    .card h3 a { color: var(--text); text-decoration: none; }
-    .card h3 a:hover { color: var(--accent); }
-    .card p { color: var(--muted); margin: 0 0 12px; font-size: 0.95rem; }
-    .tags span {
+    .track .tag {
       display: inline-block;
-      background: #1a2230;
       color: var(--accent);
-      font-size: 0.75rem;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin-right: 6px;
+      background: var(--accent-dim);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 5px;
+      margin-bottom: 10px;
     }
-    .exp-item { margin-bottom: 24px; }
-    .exp-item .role { font-weight: 600; }
-    .exp-item .period { color: var(--muted); font-size: 0.85rem; }
-    .exp-item p { color: var(--muted); margin-top: 6px; font-size: 0.95rem; }
-    footer { padding: 40px 0 80px; color: var(--muted); font-size: 0.9rem; }
-    footer a { color: var(--accent); text-decoration: none; }
+    .track h3 { font-size: 1.12rem; margin: 0 0 8px; font-weight: 700; }
+    .track p { font-size: 0.92rem; margin: 0 0 10px; color: var(--text-dim); }
+    .track .stack {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+      margin-top: 10px;
+    }
+    .track .stack b { color: var(--text); font-weight: 600; }
+
+    .exp-item { margin-bottom: 22px; }
+    .exp-item .role { font-weight: 700; font-size: 1.02rem; }
+    .exp-item .meta { color: var(--text-dim); font-size: 0.88rem; margin-bottom: 6px; }
+    .exp-item p { font-size: 0.94rem; margin: 0; }
+
+    .contact-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 28px;
+      text-align: center;
+    }
+    .contact-box p { margin-bottom: 18px; }
+    .cta {
+      display: inline-block;
+      background: var(--accent);
+      color: #06201c;
+      font-weight: 700;
+      padding: 10px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    footer { text-align: center; color: var(--text-dim); font-size: 0.82rem; margin-top: 56px; }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <div class="tagline">Senior Data Engineer</div>
-      <h1>Wallison Campanelli</h1>
-      <div class="location">Lisbon, Portugal 🇵🇹 — Open to remote/hybrid B2B contracts across Europe</div>
-      <div class="links">
-        <a href="https://github.com/wallisonlac">GitHub</a>
-        <a href="https://www.linkedin.com/in/wallison-campanelli-eng/">LinkedIn</a>
-        <a href="mailto:wallisoncampanelli.eng@gmail.com">Email</a>
+
+    <div class="eyebrow">Senior Data Engineer &amp; ML Engineer</div>
+    <h1>Wallison Campanelli</h1>
+    <p class="subtitle">Lisbon, Portugal — Open to remote / B2B contracts across Europe &amp; Latin America timezones</p>
+
+    <div class="links">
+      <a href="https://github.com/wallisonlac" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/wallison-campanelli-eng/" target="_blank">LinkedIn</a>
+      <a href="mailto:wallisoncampanelli.eng@gmail.com">Email</a>
+    </div>
+
+    <hr />
+
+    <h2>About</h2>
+    <p class="lead">
+      Senior Data Engineer with 8+ years of combined experience building production data pipelines,
+      cloud data platforms and ML-enabled systems for energy, oil &amp; gas, public-sector and industrial clients.
+      PhD candidate in Physics (University of Lisbon / LIP, in collaboration with CERN), applying
+      statistical modelling and neural networks to high-volume detector and sensor data since 2018.
+      Comfortable owning a project end-to-end — from raw data to a model or dashboard a stakeholder actually uses.
+    </p>
+
+    <hr />
+
+    <h2>What I can pick up</h2>
+    <p class="lead" style="margin-bottom: 24px;">
+      I work across six overlapping tracks. Most roles I take sit at the intersection of two or more of these.
+    </p>
+
+    <div class="tracks">
+
+      <div class="track">
+        <span class="tag">Core</span>
+        <h3>Data Engineering &amp; Cloud Platforms</h3>
+        <p>Production ETL/ELT pipelines, dimensional modelling, streaming and orchestration across enterprise cloud stacks, with pipeline configs as code.</p>
+        <div class="stack"><b>Stack:</b> Azure Data Factory, Databricks (Unity Catalog), Synapse Analytics, Microsoft Fabric, Snowflake, PySpark, Kafka, Airflow, Cosmos DB, YAML-based pipeline/CI-CD configs</div>
       </div>
-    </header>
 
-    <section>
-      <h2>About</h2>
-      <p class="lead">
-        Senior Data Engineer with a track record of turning multi-week manual processes into fully
-        automated, zero-touch pipelines across oil & gas, energy, industrial and consumer-goods clients.
-        8+ years of combined data engineering and statistical-modelling experience, including large-scale
-        scientific data processing at CERN and LIP as a PhD candidate in Physics. Comfortable owning
-        projects end-to-end: schema conversion, dimensional modelling, streaming, orchestration, cloud
-        data-warehouse integration and stakeholder-facing dashboards.
-      </p>
-    </section>
-
-    <section>
-      <h2>Services</h2>
-      <div class="grid">
-        <div class="card">
-          <h3>Data Engineering &amp; ETL/ELT</h3>
-          <p>End-to-end pipeline design and migration: legacy SQL to PySpark, dimensional modelling, data warehousing and data lakes.</p>
-        </div>
-        <div class="card">
-          <h3>Cloud &amp; Streaming</h3>
-          <p>Azure Data Factory, Databricks, Snowflake, Kafka streaming and Airflow orchestration for production-grade platforms.</p>
-        </div>
-        <div class="card">
-          <h3>BI &amp; Analytics</h3>
-          <p>Power BI dashboards and performance-tuned DAX semantic models for executive and operational reporting.</p>
-        </div>
+      <div class="track">
+        <span class="tag">Growing</span>
+        <h3>Machine Learning &amp; MLOps</h3>
+        <p>ML models embedded directly in data pipelines: forecasting, anomaly detection, classification on messy real-world time-series.</p>
+        <div class="stack"><b>Stack:</b> Python, scikit-learn, PyTorch/TensorFlow, MLflow, Azure ML, time-series &amp; forecasting</div>
       </div>
-    </section>
 
-    <section>
-      <h2>Featured Projects</h2>
-      <div class="grid">
-        {projects.map((p) => (
-          <div class="card">
-            <h3><a href={p.url} target="_blank" rel="noopener">{p.name} ↗</a></h3>
-            <p>{p.description}</p>
-            <div class="tags">
-              {p.tags.map((t) => <span>{t}</span>)}
-            </div>
-          </div>
-        ))}
+      <div class="track">
+        <span class="tag">Core</span>
+        <h3>BI &amp; Business Automation</h3>
+        <p>Executive-facing dashboards and semantic models, plus low-code automation that connects directly into the data layer.</p>
+        <div class="stack"><b>Stack:</b> Power BI, DAX, Power Query (M language), Power Apps, Power Automate, Azure Functions (event-driven automation wired into Power Automate)</div>
       </div>
-    </section>
 
-    <section>
-      <h2>Experience</h2>
-      {experience.map((e) => (
-        <div class="exp-item">
-          <div class="role">{e.role} · {e.company}</div>
-          <div class="period">{e.period}</div>
-          <p>{e.desc}</p>
-        </div>
-      ))}
-    </section>
+      <div class="track">
+        <span class="tag">Depth</span>
+        <h3>Scientific Computing &amp; Research</h3>
+        <p>Statistical modelling and neural networks on high-frequency detector/sensor data for particle-physics experiments (DUNE, SBND, ProtoDUNE 2).</p>
+        <div class="stack"><b>Stack:</b> Python, C++, GEANT4, ROOT, neural networks since 2018</div>
+      </div>
 
-    <section>
-      <h2>Let's Talk</h2>
-      <p class="lead">
-        Open to EU remote and hybrid B2B / contract opportunities.
-        Reach out at <a href="mailto:wallisoncampanelli.eng@gmail.com" style="color: var(--accent);">wallisoncampanelli.eng@gmail.com</a>
-        or connect on <a href="https://www.linkedin.com/in/wallison-campanelli-eng/" style="color: var(--accent);">LinkedIn</a>.
-      </p>
-    </section>
+      <div class="track">
+        <span class="tag">Niche</span>
+        <h3>Geospatial / GIS</h3>
+        <p>Terrain modelling, spatial risk layers and geodatabase work from a Mining Engineering background — transferable to utility &amp; risk-mapping use cases.</p>
+        <div class="stack"><b>Stack:</b> ArcGIS, geodatabases, spatial analysis</div>
+      </div>
 
-    <footer>
-      © 2026 Wallison Campanelli. Built with Astro, deployed on GitHub Pages.
-    </footer>
+      <div class="track">
+        <span class="tag">Delivery</span>
+        <h3>Public-Sector &amp; Regulated Delivery</h3>
+        <p>Data models and applied ML for national public entities — healthcare, justice and budgetary systems — under real compliance constraints.</p>
+        <div class="stack"><b>Clients:</b> SNS (national health system), Ministry of Justice, hospitals, budgetary authority</div>
+      </div>
+
+    </div>
+
+    <hr />
+
+    <h2>Recent Experience</h2>
+
+    <div class="exp-item">
+      <div class="role">Senior Data Engineer — CGI, Lisbon</div>
+      <div class="meta">2025 — Present</div>
+      <p>EDP (electric utility), SBM &amp; Oryx (oil &amp; gas), Castle Waters. Automated a 2-week manual BI process into an end-to-end pipeline; converted legacy SQL databases into PySpark pipelines; built executive dashboards.</p>
+    </div>
+
+    <div class="exp-item">
+      <div class="role">Data Engineer &amp; Instrumentation Specialist — CERN, Geneva</div>
+      <div class="meta">Jan 2024 — Dec 2024</div>
+      <p>Automated processing workflows for scientific instrumentation data; reduced calibration downtime through anomaly-detection and process automation.</p>
+    </div>
+
+    <div class="exp-item">
+      <div class="role">PhD Candidate — LIP / University of Lisbon &amp; CERN</div>
+      <div class="meta">2022 — Present</div>
+      <p>ML and statistical modelling on high-volume detector/laser-sensor time-series for neutrino experiments (DUNE, SBND, ProtoDUNE 2).</p>
+    </div>
+
+    <div class="exp-item">
+      <div class="role">Data Analyst / BI Developer — 3M Brasil (Remote)</div>
+      <div class="meta">2021 — 2022</div>
+      <p>Integrated Snowflake with Azure; built global production &amp; demand-planning dashboards; automated week-long reporting down to minutes.</p>
+    </div>
+
+    <hr />
+
+    <h2>Let&#39;s talk</h2>
+    <div class="contact-box">
+      <p>Open to remote and B2B contract roles — data engineering, ML engineering, or a mix of both.</p>
+      <a class="cta" href="mailto:wallisoncampanelli.eng@gmail.com">Get in touch</a>
+    </div>
+
+    <footer>&copy; 2026 Wallison Campanelli. Built with Astro, deployed on GitHub Pages.</footer>
+
   </div>
 </body>
 </html>
